@@ -1,4 +1,4 @@
-Laravel package providing ready to use template files to mimic the current KU Leuven web layout
+Laravel package providing ready to use template files to mimic the current KU Leuven web layout with a Bootstrap layer
 
 # For Laravel 4
 
