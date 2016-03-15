@@ -1,3 +1,5 @@
+Laravel package providing ready to use template files to mimic the current KU Leuven web layout
+
 # For Laravel 4
 
 Not supported yet
