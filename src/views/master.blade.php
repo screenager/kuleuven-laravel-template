@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>@section('title') Stages Orthopedagogie @show</title>
+  <title>@section('title') {{ config('app.app_name', 'My application') }} @show</title>
   <meta name="viewport" content="width=device-width">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link href="{{ asset('css/kul-vendors.css') }}" rel="stylesheet">
@@ -60,7 +60,7 @@
     </div>
 
     <nav class="portlet portletNavigationTree">
-      <h2><a href="#"><span>Stageplatform OGOP</span></a></h2>
+      <h2><a href="#"><span>{{ config('app.app_name', 'My application') }}</span></a></h2>
       {{--
       {!! $SideNav->asUl(['class' => 'navTree navTreeLevel0']) !!}
       --}}
