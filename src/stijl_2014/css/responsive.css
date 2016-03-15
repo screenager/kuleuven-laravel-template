@@ -1,0 +1,251 @@
+body{margin:0;padding:0} 
+#subnav,#nieuws{display:none} 
+#menu-icon{display:none} 
+#subnav-icon{display:none} 
+/*#header #access{display:none}*/
+.lc #subnav{display:block} 
+.rc #nieuws{display:block} 
+#contentwrapper{float:left;width:100%;overflow:visible;padding: 10px 0;} 
+#subnav, #contentwrapper, #nieuws{position:relative} 
+#nieuws{clear:both} 
+#mainnav{z-index:9999} 
+ 
+@media screen and (max-width:500px) { 
+
+  object,embed,iframe{display:block;max-width:100%;height:auto}
+  img {max-width:100%;height:auto} 
+  iframe[id="slideshow"] {display: none;}
+  .slideshowdiv {padding-bottom: 0 !important;}
+  
+  #portal-columns{margin:0;/*padding-top: 5px;*/} 
+  #contentwrapper {margin:10px;float:none;width:auto;}  
+  
+  /** HEADER **/
+  #header{background: #1E9BB7;z-index:0;overflow: hidden; height: 66px;} 
+  #header #logo {height: 35px; width: 110px; left: 15px; top: 15px;} 
+  #header #searchform {position:absolute; overflow: hidden; width:43%; height: 30px; right: 15%; top: 18px;border:none;
+  border-radius: 2px} 
+  #words {position: absolute; overflow: hidden; font-size: 1.5em; padding: 0 2%;
+    height: 100%;width:76%;}
+  #words:focus {outline:none;} 
+  #header input.zoekbutton {width: 20%; height:32px; 
+    background-position: center; background-color: #186174;}
+  #mainnav {display:none;} 
+ 
+  /* separate mobile navigation menu at the bottom */ 
+  #mobnav {z-index:9999; clear:both; top:50px; left:0; width:100%; background:#14758B; position: static; display: block;} 
+  #mobnav li {clear:both; float:none; margin:0} 
+  #mobnav a, #mobnav ul a{font-size: 1.2em; font-weight: bold; text-decoration: none; text-transform: uppercase; color: #FFFFFF; 
+      background:#14758B url(https://stijl.kuleuven.be/_i/mob-sprite2.png) no-repeat right -180px;
+      display:block; border-top:1px solid #fff; border-bottom: none; padding: 10px 10px 10px 20px;} 
+  #mobnav a:hover, #mobnav ul a:hover, #mobnav ul a:active {background:#23B7D6 url(https://stijl.kuleuven.be/_i/mob-sprite2.png) no-repeat right -180px;} 
+  #mobnav li ul {display:none!important;} 
+  /* intranet mobnav */
+  #mobnav.intranet {background: #be4b06;}
+  #mobnav.intranet a, #mobnav.intranet ul a {background:#be4b06;} 
+  #mobnav.intranet a:hover, #mobnav.intranet ul a:hover, #mobnav.intranet ul a:active {background:#e37305;} 
+
+  /* mobile links from header */ 
+  #taskbar {background: #1E9BB7; position: absolute; bottom: 0; width: 100%; padding: 0;} 
+  #taskbar li {width: 33%; display: block; float: left; text-align: center; padding: 0;}   
+
+  #taskbar .organigram,  #taskbar .organisational, #taskbar .bibliotheken, #taskbar .libraries, #taskbar .toledo {display: none;}
+  #taskbar .contact, #taskbar .whoiswho, #taskbar .intranet {display: none;} /* remove toplinks from default sites */
+  #taskbar .langselect {padding: 0; position: absolute; top: -48px; right: 10px; width: 30px; line-height:29px; 
+    border: none; font-weight: bold; font-size: 1em; padding: 0;} 
+  #taskbar .langselect:hover, #taskbar .langselect:active {background: #186174;   border-radius: 2px;}  
+
+  /** INTRANET HEADER **/
+  .intranet #taskbar {background: none; border-top: 1px solid #ED8A28;}
+  .intranet #taskbar li {border-left: 1px solid #ED8A28;}
+  .intranet #taskbar li.kuloket, .intranet #taskbar li.langselect {border-left: none;}
+  .intranet #taskbar .langselect:hover, .intranet #taskbar .langselect:active {background: #BE4B06;}
+  .intranet #taskbar .kuloket a, .intranet #taskbar .webmail a, .intranet #taskbar .kuleuven a {
+    display: block; padding: 8px 0;}
+  .intranet #taskbar .kuleuven a {background: url(https://stijl.kuleuven.be/_i/icons/icon_home.png) no-repeat right center transparent;}
+  .intranet #taskbar .wiw, .intranet #taskbar .org {display: none;} 
+
+  .intranet #header {height: 100px;}
+  .intranet #header input.zoekbutton {width: 20%; height:32px; 
+    background: url(https://stijl.kuleuven.be/_i/icons/icon_zoek_intranet.png) no-repeat 0px 0px;
+    background-position: center; background-color: #AC4608;}
+  .intranet #header form #words {position: absolute; overflow: hidden; font-size: 1.5em; padding: 0 2%; height: 100%;width:76%;}
+  .intranet #header #logo {top: 8px; left: 8px; height: 50px;}
+	
+  /** KULAK HEADER **/
+  #header.kulak #logo {width:150px; height: 31px; left: 8px; top: 18px;}
+  #header.kulak #searchform {width: 33%;}
+  .kulak #taskbar .langselect {width: 40px; right: 8px; text-transform: uppercase;}
+  
+  /** ASSOCIATION **/
+  /* mobile links from association header */ 
+  #taskbar .assoc-zoek,  #taskbar .assoc-contact, #taskbar .assoc-webdoc {display: none;} 
+  /* assoc header */
+  .association #taskbar {padding: 0; background: none; border: none;}
+  .association #taskbar .langselect {top: -80px;}
+  .association #taskbar .langselect:hover, .association #taskbar .langselect:active {background: none;}
+  .association #taskbar a:link, .assoc #taskbar a:visited {color: #00335F;}
+  .association #header .topzoekform #searchform {right: 12%;}
+  .association #header img#logo {left: 10px; height: 47px; top: 26px;}
+  /* navigation portlet */
+  .association #subnav h2, .association #subnav h3 {background: #00335F;}
+  .association #subnav h2 a, .association #subnav h3 a {background: none;}
+  .association #subnav ul li a span, .association #subnav ul li a:hover span {color: #00417A;}
+  
+  /* navigation from leftcolumn */ 
+  #subnav-icon{position:absolute;left:0;background:transparent;color:#686868;font-weight:bold;font-size:20px;cursor:pointer;width:35px;height:35px;text-align:center;padding:0 2px;display:block;  
+    background: transparent url(https://stijl.kuleuven.be/_i/mob-sprite2.png) no-repeat -5px -35px;} 
+  #subnav-icon+h2>a{padding-left:0;/*margin-left: 80px;*/} 
+  #subnav {clear:both;/*border-bottom:3px solid #eee;*/
+   }
+  #subnav > .portlet { overflow:hidden; }
+  #subnav > .portletNavigationTree > .navTree, #subnav > .portletStaticText {
+    max-height: 0px;
+  }
+  #subnav > .portletStaticText:first-of-type  {max-height: 35px;}
+
+  #subnav .hidden {border-top: 0px;}
+  #subnav .logo img {display: none;}
+  
+  #subnav > a:first-child {display: none;} 
+
+  #subnav h2 {padding: 0.5em .5em .5em 100px; background:#00335F;  /* #6D6D6D */ 
+    text-transform: uppercase; font-weight: bold;} 
+  #subnav h2 a, #subnav h3 a {background: inherit;text-align: right;}
+
+  #subnav ul li a { background:#00417A url(https://stijl.kuleuven.be/_i/mob-sprite2.png) no-repeat right -180px;color:#000;padding:7px 20px 7px 8px;color:#fff;
+  border:none;border-bottom:1px solid #1083A8;} 
+  #subnav ul li a.intranet {background:#00417A url(https://stijl.kuleuven.be/_i/icons/icon_intranet.png) no-repeat 97% 50%;} 
+  #subnav ul li a:hover, #subnav ul li a:active {background-color: #00335F;}
+  #subnav ul li a.state-published span {color:#fff;} 
+  #subnav li {line-height: 2em;} 
+  .portlet + .portlet {margin-top: 1px;} 
+
+  .portlet + .portlet {   margin-top: 0; border-top:3px solid #1083A8 ;}
+  #subnav ul {border-top:0;}
+
+  /* rightcolumn */
+  #nieuws ul, #nieuws .extra ul {padding: 0;} 
+  #nieuws li, #nieuws .extra li {
+    line-height: 3em; border-bottom: 1px solid #ccc;  padding: 2px 20px 2px 10px;
+    background: transparent url(https://stijl.kuleuven.be/_i/mob-sprite2.png) no-repeat right -180px; 
+  }
+  #nieuws li a, #nieuws .extra li a
+   {display: block; /* padding: 1em 10em 1em 0;*/}  
+  #nieuws li a, #nieuws .extra li a:hover {border: none; }
+   
+  .hide-on-small{display:none;} 
+
+  h1 {margin: 0;color:#004079;}
+  
+  #content .colcontainer h1,#content .colcontainer h2, #content .colcontainer h3,
+   #content .colcontainer h4, #content .colcontainer h5, .colcontainer h6,
+   #nieuwswrap h2
+  {color:#004079;font-size:180%; padding: 10px;border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+  /* #content .colcontainer h2:first-of-type {border-top: 3px solid red} */
+
+  #content .colcontainer h2, #content .colcontainer h3, #content .colcontainer h4 {margin-left: -10px; margin-right: -10px;}
+
+
+  #nieuwswrap+.colcontainer h2:first-of-type {border-top: none;}
+  #nieuwswrap h2 {margin-top:0!important;}
+  #nieuws h3 {padding: 1em 10px;}
+
+  /* nieuwswrap */
+  #nieuwswrap {margin: 0 -10px;}
+  #nieuwswrap h2 a.feeds {float: right;}
+  #nieuwswrap h2 a {color: inherit ;}
+  #nieuwswrap ul li:last-child {border-bottom: none;}
+  #nieuwswrap ul li {margin: 0; padding: 10px 20px 10px 10px;position: relative;
+  }
+  #nieuwswrap ul li:after, p.more:after {content: ""; position: absolute; right:0px;top:50%; margin-top: -10px; width: 20px;height:20px;
+  background: transparent url(../_i/mob-sprite2.png) no-repeat right -190px;visibility: visible!important;}
+
+  #nieuwswrap #kalender li a {padding-left: 10px}
+  #kalender .date, #nieuws .date {color:#fff!important; background: #179FBC; width:70px; padding:5px;float:left;text-align: center;display:inline;}
+
+  #nieuws p.more, p.more {margin:0!important;border: solid #ccc; border-width: 1px 0;position: relative;background:transparent;text-align: left}
+  p.more a:link, #nieuws p.more a:visited, #nieuws p.more a:hover {
+    display: block;
+    background: transparent;
+    font-size: 130%;line-height: 2em; padding: 2px 20px 2px 10px;
+    border:none;
+  }
+  #socialmedia {margin:0;overflow: auto;}
+  #socialmedia a {
+    margin: 1em; width: 25px; height: 25px; display: inline;float:left;
+  }
+  #socialmedia img {width:100%;height:100%;}
+
+  #content ul {margin-left: 0;}
+  #content ul li {padding-bottom: 8px}
+  #content a {border-bottom: none;}
+
+  .attentionbox1, .attnboxfilled1, .attentionbox2, .attnboxfilled2, .attentionbox3, .attnboxfilled3 {width: auto;margin: 10px -10px;}
+  #content blockquote {
+    margin: 0;padding:5px 0;font:italic 1.5em/1.3 serif;
+    text-align: justify;color:#104D82;
+    display: block;
+    background: url(https://stijl.kuleuven.be/_i/icons/quotes1.gif) no-repeat left top;
+    text-indent: 35px;
+  }
+
+  #nieuws div {margin: 0;border:none;}
+  #nieuws li:last-child {border:none;}
+
+  #banner {margin:0;}
+  #nieuws .banner img {margin:auto;display:block;}
+  #portal-breadcrumbs {display: none;}
+}
+
+
+@media screen and (min-width:501px){
+#portal-columns{margin:0 10px; padding-top: 10px;}
+#taskbar{margin-left:157px} 
+.kulak #taskbar {margin-left:266px} 
+#taskbar li{float:left} 
+#mobnav {display: none;} 
+.intranet #header #mainnav {margin-left: 170px;}
+.lc#portal-columns{padding-left:170px} 
+.lc #subnav{float:left;width:160px;margin-right:-170px;right:170px} 
+#nav a{padding:0 6px 6px} 
+/* fixes for visual editor */ 
+#content.cke_show_borders .twocol{width:48%;float:left;position:relative}
+#content.cke_show_borders .twocol+.twocol{float:right}
+#content.cke_show_borders .threecol{width:31%;float:left;position:relative}
+#contentwrapper {padding:0 0 50px 0;}
+/* added by YK for toledo and all */
+.hide-on-big{display:none;}
+} 
+ 
+@media screen and (min-width:768px){ 
+
+#taskbar{margin-left:0;text-align:right}
+#taskbar li{display:inline;float:none}
+.intranet #header #mainnav {margin-left: 0;}
+.twocol{width:49%;float:left;position:relative}
+.twocol+.twocol{float:right}
+.threecol{width:31%;float:left;position:relative}
+.fourcol{float:left;position:relative}
+/*.fourcol+.fourcol{float:left} */
+.fourcol:last-child {float:left}
+iframe[id="slideshow"]{display:block;width:100%;height:300px}
+iframe[id="iframe_slideshow"]{display:block;width:100%;height:300px}
+#mainnav{position:absolute;bottom:0;left:180px}
+.rc#portal-columns{padding-right:210px}
+.rc #nieuws{clear:none;float:left;width:200px;margin-left:-200px;left:210px}
+}
+ 
+@media screen and (min-width:980px){
+#wrapper{margin:0 auto;border-left:1px solid #ddd;border-right:1px solid #ddd}
+#mainnav{width:800px}
+#nav a{padding:10px 10px 10px 20px;background:url(https://stijl.kuleuven.be/_i/icons/icon_nav.png) no-repeat 4px 50%}
+}
+ 
+@media screen and (min-width:1025px){
+#wrapper{width:90%;max-width:980px}
+/*#contentwrapper{font-size:13px}*/
+}
+
+/*img,object,embed,iframe{max-width:100%;height:auto}*/
+img{-ms-interpolation-mode:bicubic}

@@ -1,0 +1,306 @@
+
+$tabColor : #5cabbb;
+$hoverColor: #EBFAFA;
+
+/* ================================================================================*/
+/* Bootstrap improvements */
+
+.row-buffer { margin-top:20px; }
+.row-buffer-below { margin-bottom:20px; }
+.row-buffer-sm { margin-top:5px; }
+.alert-sm { padding: 5px; }
+
+.text-warning { color: #DA8F0E; }
+
+.row-centered {
+  text-align:center;
+}
+
+.col-centered {
+  display:inline-block;
+  float:none;
+  /* reset the text-align */
+  text-align:left;
+  /* inline-block space fix */
+  margin-right:-4px;
+}
+
+/* Container fixes */
+html, body {
+  font-size: 10px;
+}
+#page-content {
+  table {
+    input {
+      width: 100%;
+    }
+    tbody tr td {
+      vertical-align: middle;
+    }
+  }
+}
+
+/* ================================================================================*/
+/* KUL style fixes (for example missing stuff from the Sunburst theme from Plone */
+
+/* Navigation */
+#nav ul { width: 170px + 40 !important; }
+#nav ul li { width: 170px + 40 !important; }
+#nav ul li a { width: 150px + 55 !important; }
+
+#mainnav {
+  li.active {
+    background-color: #338093;
+    color: #FFF;
+  }
+}
+
+#wrapper > #portal-columns > #subnav { min-height: 350px; }
+
+
+/* Portlets */
+.portlet {
+  margin-bottom: 20px;
+}
+
+
+/* Breadcrumbs */
+#portal-breadcrumbs {display: inline-block; font-size: 0.9em;}
+#portal-breadcrumbs #breadcrumbs-you-are-here {left: -9999px; position: absolute;}
+#portal-breadcrumbs a {float: left; color: #536368; border-bottom: none;}
+#portal-breadcrumbs .breadcrumbSeparator {
+  background: url("../img/kuleuven_bootstrap/icon_arrow_nieuws.gif") no-repeat scroll 40% top transparent;
+  float: left; text-indent: -9999px; width: 20px;}
+#portal-breadcrumbs #breadcrumbs-current {font-weight: bold;}
+
+#subnav ul li a.active { background-color: #eee; }
+
+
+/* Taskbar */
+#taskbar {
+  right: 9px !important;
+  position: absolute !important;
+}
+
+/* Mobile only */
+@media screen and (max-width: 800px) {
+  #content ul li { margin: 0 1px 2px 0 !important; }
+  #content ul li { padding: 0 1px 2px 0 !important; }
+}
+
+/* ================================================================================*/
+/* Bootstrap + KUL improvements */
+
+/* Glyphicons in subnav */
+#subnav ul li a.fa {
+}
+
+#footer.row { margin-left:0; margin-right: 0}
+a.btn-success:visited { color: #fff; }
+
+@media screen {
+  body {
+    background: #ededed;
+    font: 10px Arial,sans-serif;
+    line-height: 1.4;
+    color: #222;
+  }
+  h1 { font-size: 2em; margin: 0; font-weight: 700 }
+  h2 { font-size:1.5em;font-weight:400;margin:.9em 0}
+  h3 { font-size: 1.333em; font-weight: 700;}
+
+  dl {
+    dl {
+      margin-left: 15px;
+      margin-top: 15px;
+      dt {
+        color: #0C788B;
+      }
+    }
+  }
+
+  #content {
+    ul {
+      margin: 0 !important;
+    }
+  }
+
+  /* Main Navigation */
+  #content ul.nav-tabs {
+    margin-bottom: 15px !important;
+
+    li {
+      background: none !important;
+      margin: 0 0 -1px 0px;
+    }
+    li.active > a, li.active > a:hover, li.active > a:focus {
+      background-color: $tabColor;
+      color: white;
+    }
+    li > a:hover {
+      background-color: $hoverColor;
+    }
+    li:first-child {
+      padding-left: 0;
+    }
+  }
+
+  /* Side Navigation */
+  #subnav {
+    li.active > a, li.active > a:hover, li.active > a:focus {
+      background-color: #eee;
+    }
+  }
+}
+
+/* Buttons */
+a.btn-success:link { color: white; }
+a.btn-primary:link { color: white; }
+a.btn-danger:link { color: white; }
+
+
+/* Pagination */
+#content ul.pagination li {
+  background: none !important;
+}
+
+.pagination > li > a, .pagination > li > span {
+  padding: 6px 7px;
+}
+.pagination > li > a[rel="prev"],
+.pagination > li > a[rel="next"] {
+  padding: 6px 13px;
+}
+#content ul.pagination li { padding-left: 0; }
+
+
+/* Forms */
+.radio label, .checkbox label {
+  padding-left: 6px;
+}
+
+.input-group.datetime li {
+  background: none !important;
+}
+
+fieldset {
+  border: 1px solid #ECEAEA;
+  padding: 8px;
+  margin-bottom: 20px;
+  &:hover { background-color: $hoverColor; }
+
+  legend {
+    color: #329fd7;
+    font-size: 1.5em;
+  }
+}
+
+.form-group.checkbox, .form-group.radio {
+  ul {
+    li {
+      padding-left: 20px;
+      background: none;
+      padding-top: 2px;
+    }
+  }
+  &.vertical {
+    ul li {
+      float: left;
+      margin-right: 18px;
+      label {
+        padding-left: 2px;
+      }
+    }
+  }
+}
+
+/* behave as a label tag */
+.checkbox-group-label,
+.radio-group-label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/** Summernote (plugin) improvements */
+.note-editor .btn-toolbar {
+  margin-left: 0;
+}
+
+/** select2 (plugin) improvements */
+.select2-container {
+  ul {
+    margin: 0;
+    overflow: hidden;
+    li {
+      margin: 5px 5px 0px 5px;
+      padding-left: 20px;
+      background: none;
+      div {
+        font-size: 16px;
+      }
+    }
+  }
+}
+.select2-container .select2-choices .select2-search-field {
+  background: url('../../../img/kuleuven_bootstrap/select2_search_arrow.png') no-repeat 4px 3px !important;
+}
+
+/** IE fixes **/
+@media screen {
+  #mainnav {
+    bottom: 0 !important;
+    position: absolute !important;
+    width: 500px;
+  }
+  #taskbar {
+    top: 0 !important;
+    position: absolute !important;
+  }
+}
+
+
+/* Mobile focus fix */
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  font-size: 16px;
+}
+
+/* Admin */
+legend.table-legend {
+  font-size: 0.9em;
+  border-bottom: none;
+  margin-bottom: inherit;
+}
+
+/* KUL Taskbar */
+#taskbar {
+  li:first-child {
+    border-left: none;
+  }
+  #language-switcher {
+    float: left;
+    .active { font-weight: bold; }
+  }
+  #service-menu {
+    float: left;
+    a:hover { border-bottom: 1px solid #59ACCA; }
+  }
+}
+
+/** Bootstrap sortable overwrites */
+table.sortable>thead th:hover:not([data-defaultsort=disabled]) {
+  background: #338093;
+}
+
+/* Desktop only */
+@media screen and (min-width: 800px) {
+
+}
+
+/* ================================================================================*/
+/* master.blade.php specific */
+
+#page-title {
+  margin-bottom: 10px;
+}

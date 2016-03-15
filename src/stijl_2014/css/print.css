@@ -1,0 +1,56 @@
+/* print css */
+html, body {margin: 0;}
+.slideshowdiv, #slideshow { display:none;}
+
+body, #wrapper, #portal-columns, #contentwrapper, #content, #subnav, #subnav h2 a {margin: 0; padding:0;}
+* {background-image: none !important;/*background-color:#FFF !important;*/ color:#000 !important;
+/*border:none;*/
+float: none !important;position:static !important;}
+#access, #header ul, #header form, #header .access, .access *, #taskbar, #mainnav,
+#subnav, .more, .backtotop, #nieuws img, 
+#footer #sedes, #footer #assoc {display:none;} 
+body {font: 10pt Arial, Helvetica, sans-serif;width:auto;max-width:100%;}
+#wrapper {width:90% !important;min-width:90%;max-width:90%;padding:0 4%}
+#content p {text-align: justify;}
+#header {height:auto;border:none;}
+#subnav, #nieuws {width:90%}		
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {page-break-after: avoid;}
+#content h1 {font-size: 18pt;}
+#content h2 {font-size: 14pt;}
+#content h3, #content h4, #content h5, #content h6 {font-size: 13pt;}
+#subnav h2 {padding:12pt 0; margin-left:0;width: 100%; font-size: 160%;}
+#nieuws {float:none;border-bottom: 1px dashed #CCC;padding-bottom: 1em;}
+#nieuws * {border:none !important;}
+#nieuws h3 {font-size: 130%;}
+#nieuws ul, #right p {margin:0; padding:0}
+#nieuws li, #content li {text-indent: 0; list-style-position:outside; list-style-type: circle; padding: 0 0 3px}
+#content a:link, #content a:visited {color: #520; text-decoration: underline;}
+.top {display:none;}
+.attentionbox1, .attentionbox2, .attentionbox3, .attnboxfilled1, .attnboxfilled2, .attnboxfilled3 {padding: 0px 10px 10px 10px; border:solid #666 1px;margin-bottom:10px;}
+#content .attentionbox1 h6, #content .attentionbox2 h6, #content .attentionbox3 h6, 
+#content .attnboxfilled1 h6, #content .attnboxfilled2 h6, #content .attnboxfilled3 h6 {
+	margin:0;}
+img {border:none;width:auto;}
+.twocol, .threecol, .fourcol {display: table-cell; padding: 6px;}
+
+#content p img.left, #content .twocol img.left {float:left !important;}
+#content p img.right, #content .twocol img.right {float:right !important;}
+
+#content img.left {max-width:100%;padding: 0 17px 0 0;}
+#content img.right {max-width:100%;padding: 0 0 0 17px;}
+#footer {margin: 5px 0; padding: 12pt 0 0 0; border:none !important; font-size:80%; page-break-before:avoid;clear:left;}
+#footer p.container {border-top: 2px solid #CCC;}
+/*toegevoegd icm*/
+table * {vertical-align:top;}
+table.tableborder {border-collapse:collapse; border:1px solid #075A90}
+/*als onderstaande lijn niet wordt gespecificeerd, springt een th automatisch gecentreerd, zowel in de main als de print ??? */
+#content th {text-align:left}
+
+#nieuwswrap img {width:80px;border:none;}
+#nieuwswrap li {clear:both;}
+a {border:none;text-decoration:none;}
+
+#footer img {display:none;}
+
+/* wms */
+#edit-bar, .managePortletsLink, .managePortletsFallback,.contentHistory, .portletSearch, .portletCollection img {display:none;}
