@@ -31,7 +31,7 @@ A .bowerrc is already provided so the vendors will be downloaded in the correct 
 ### Laravel-menu
 The template is optimized to work together with [laravel-menu](https://github.com/lavary/laravel-menu).
 
-For the menu in the navigation bar, you can rely on the kul2014.js script that injects the code scraped from the pww.kuleuven.be domain.
+For the menu in the navigation bar, you can rely on the kul2014.js script that injects the code scraped from the ppw.kuleuven.be domain.
 Notice that this will not work when running the application on a different environment, such as your local machine.
 
 ## Updates 
