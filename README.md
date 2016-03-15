@@ -15,6 +15,7 @@ php artisan vendor:publish --tag=kuleuven_bootstrap
 ### Settings
 ..
 
+On production:
 ``` bash
 php artisan config:cache
 ```
