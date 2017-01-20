@@ -1,5 +1,9 @@
-var elixir = require('laravel-elixir');
 process.env.DISABLE_NOTIFIER = true;
+const elixir = require('laravel-elixir');
+const download = require("gulp-download");
+const rename = require("gulp-rename");
+const gulp = require('gulp');
+
 
 /*
  |--------------------------------------------------------------------------
@@ -13,53 +17,75 @@ process.env.DISABLE_NOTIFIER = true;
  */
 
 elixir(function(mix) {
-    var bowerDir = './resources/assets/vendor/';
-    var kulAssetsDir = './resources/assets/kuleuven_bootstrap/';
-    var kulPublicImgDir = './public/img/kuleuven_bootstrap/';
+  var vendorDir = './resources/assets/vendor/';
 
-    var sassPaths = [
-        bowerDir + "bootstrap-sass/assets/stylesheets",
-        bowerDir + "font-awesome/scss",
-    ];
+  // KUL 2016 style
+  var latestKulStijlUrl = 'https://stijl.kuleuven.be/2016/release/latest';
+  var kulAssets2016Dir = './resources/assets/style2016/';
+  var fetchedTemplatesDir = './resources/views/layouts/kul_2016/fetched_with_gulp';
 
-    elixir(function(mix) {
-        mix
-          .sass('app.scss', 'public/css', { includePaths: sassPaths })
-          .scripts([
-              'jquery/dist/jquery.min.js',
-              'bootstrap-sass/assets/javascripts/bootstrap.min.js',
-              'bootstrap-sortable/Scripts/bootstrap-sortable.js',
-              'jquery.maxlength/jquery.plugin.min.js',
-              'jquery.maxlength/jquery.maxlength.min.js',
-              'summernote/dist/summernote.min.js',
-          ], 'public/js/vendor.js', bowerDir)
-          .copy('resources/assets/js/app.js', 'public/js/app.js')
-          .copy(bowerDir + 'font-awesome/fonts', 'public/fonts')
-          .copy(bowerDir + 'summernote/dist/font/summernote.eot', 'public/css/font/summernote.eot')
-          .copy(bowerDir + 'summernote/dist/font/summernote.ttf', 'public/css/font/summernote.ttf')
-          .copy(bowerDir + 'summernote/dist/font/summernote.woff', 'public/css/font/summernote.woff')
-          .styles([
-            bowerDir + '/bootstrap-sortable/Contents/bootstrap-sortable.css',
-            bowerDir + '/jquery.maxlength/jquery.maxlength.css',
-            bowerDir + '/summernote/dist/summernote.css'
-          ])
+  download(latestKulStijlUrl + '/css/main.css')
+    .pipe(gulp.dest(vendorDir + 'kul_latest/css'));
 
-          // for KULeuven Bootstrap package
-          .styles([
-            kulAssetsDir + '/css/main.css',
-            kulAssetsDir + '/css/responsive.css',
-          ], 'public/css/kul-vendors.css')
-          .styles([
-            kulAssetsDir + '/css/IE.css',
-            kulAssetsDir + '/css/ieresp.css',
-          ], 'public/css/kul-ie.css')
-          .sass([
-            kulAssetsDir + '/improvements_by_ppw.scss'
-          ], 'public/css/kul-improvements-by-ppw.css')
-          .copy(kulAssetsDir + 'img', kulPublicImgDir)
-          .copy(kulAssetsDir + 'kul2014.js', 'public/js/kul2014.js')
+  download(latestKulStijlUrl + '/js/all.min.js')
+    .pipe(gulp.dest(vendorDir + 'kul_latest/js'));
 
+  download('https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans:400italic,600italic,700italic,400,700,600|Merriweather:400italic,400,700')
+    .pipe(rename('google-for-kul'))
+    .pipe(gulp.dest(vendorDir + 'kul_latest/fonts'));
 
-    });
+  var layoutsDirs = [
+    '', // default one
+    '/intranet',
+    '/kulak',
+    '/hosted-by',
+    '/corp',
+    '/landingpage',
+  ];
+  layoutsDirs.forEach(function(layoutDir) {
+    download([
+      latestKulStijlUrl + '/includes' + layoutDir + '/header.nl.inc',
+      latestKulStijlUrl + '/includes' + layoutDir + '/header.en.inc',
+      latestKulStijlUrl + '/includes' + layoutDir + '/footer.nl.inc',
+      latestKulStijlUrl + '/includes' + layoutDir + '/footer.en.inc',
+      latestKulStijlUrl + '/includes' + layoutDir + '/flyout.nl.inc',
+      latestKulStijlUrl + '/includes' + layoutDir + '/flyout.en.inc',
+    ])
+    // convert the name of the .inc files to Laravel Blade files
+      .pipe(rename(function (path) {
+        path.basename = path.basename.replace('.inc', '')
+        path.basename = path.basename.replace('.', '_')
+        path.extname = ".blade.php"
+      }))
+      .pipe(gulp.dest(fetchedTemplatesDir + "/icts" + layoutDir));
+  });
+
+  mix.scripts([
+    kulAssets2016Dir + 'layout2016.js',
+    './resources/assets/app.js',
+    './resources/assets/usability.js',
+  ], 'public/js/style2016/app.js')
+
+  mix.sass(kulAssets2016Dir + 'layout2016.scss', 'public/css/style2016/app.css')
+
+  mix.styles([
+    vendorDir + '/select2/dist/css/select2.min.css',
+    vendorDir + '/select2-bootstrap-theme/dist/select2-bootstrap.css',
+    // .. place more vendor css dependencies here
+  ], 'public/css/style2016/all.css');
+
+  mix.scripts([
+    'kul_latest/js/all.min.js',
+    'tinymce/tinymce.js',
+    'bootstrap-sass/assets/javascripts/bootstrap.min.js',
+    'bootstrap/js/tab.js',
+    'select2/dist/js/select2.min.js',
+    'jquery.are-you-sure/jquery.are-you-sure.js',
+    // .. place more vendor scripts dependencies here
+  ], 'public/js/style2016/vendors.js', vendorDir)
+
+  mix.copy(vendorDir + 'tinymce/themes/modern', 'public/tinymce/themes/modern')
+  mix.copy(vendorDir + 'tinymce/skins/lightgray', 'public/tinymce/skins/lightgray')
+  mix.copy(vendorDir + 'tinymce/plugins', 'public/tinymce/plugins')
 
 });

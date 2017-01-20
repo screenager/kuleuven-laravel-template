@@ -1,0 +1,111 @@
+// Bootstrap 3
+// @import "node_modules/bootstrap/scss/bootstrap"; // already imported by KUL below
+
+
+// KU Leuven assets
+@import '../vendor/kul_latest/fonts/google-for-kul';
+@import '../vendor/kul_latest/css/main';
+
+
+// Improvements to KUL/Bootstrap layout. This is entirely personal
+#contentwrapper {
+  margin-bottom: 35px;
+}
+
+.crud-footer {
+  margin-top: 20px;
+}
+.pagination {
+  margin-top: 0px;
+}
+.btn-inline-table {
+  display: inline-table;
+}
+
+.pull-right {
+  display: inline;
+  a {
+    float: right;
+  }
+}
+
+form { // as ICTS overwrites it
+  .btn-group-sm > .btn, .btn-group-sm > button, .btn-group-sm > input[type=submit], input[type=submit].btn-sm, .btn-sm {
+    padding: .25rem .75rem;
+  }
+}
+
+table {
+  margin: 1em 0;
+}
+
+h2#subtitle {
+  margin-top: 0;
+}
+
+.menu-2nd-level {
+  margin-bottom: 10px;
+
+  ul {
+    padding: 0.5rem 0.5rem;
+  }
+  li {
+    list-style: none;
+    display: inline;
+  }
+}
+
+ol.breadcrumb {
+  padding: 0;
+}
+
+.local-header .nav-tabs {
+  padding-left: 0;
+}
+
+/** Missing Bootstrap 3 styles, previously present in Bootstrap 2 */
+.btn-xs {
+  padding: .25rem .75rem;
+  font-size: 0.9rem;
+  text-transform: none;
+}
+
+fieldset {
+  padding: .35em .625em .75em;
+  margin-bottom: 25px;
+  border: 1px solid #d6d6d6;
+}
+
+.btn-primary-outline.active {
+  color: white;
+  border-color: #004070;
+  background-color: #004070;
+}
+
+/** Print styles **/
+@media print {
+  h2 .material-icons {
+    display: none;
+  }
+
+  header#header,
+  #subnav,
+  .menu-2nd-level,
+  .portletNavigationTree,
+  #portal-breadcrumbs,
+  footer {
+    display: none !important;
+  }
+
+  /* Hide Bootstrap tabs */
+  .nav-tabs { display: none !important;}
+  .tab-content > .tab-pane {display: block !important; opacity: 1 !important; visibility: visible !important}
+
+  dl dt {
+    font-weight: bold !important; /* as in 2016 layout, the design relies on the color */
+  }
+}
+
+
+/** Load other CSS for this app */
+@import '../app.scss';

@@ -1,45 +1,47 @@
-Laravel package providing ready to use template files to mimic the current KU Leuven web layout with a Bootstrap layer
+Laravel package providing ready to use template files to mimic the [2016 KU Leuven web layout](https://stijl.kuleuven.be/2016/release/latest/howto_devs.html).
 
-# For Laravel 4
+This package should be considered as a boilerplate. It is intended to be installed and configured just once per project.
+Afterwards, updates will not be reflected automatically to your template files.
 
-Not supported yet
+# For Laravel 5.3
+Soon!
 
+# For Laravel 5.2
 
-# For Laravel 5
+## Prerequisites
+* A freshly installed Laravel 5.2
+* [Composer](http://getcomposer.org)
+* [Gulp](http://gulpjs.com)
+* [Bower](http://bower.io)
+* [Compass](http://compass-style.org/)
 
 ## Install
 
+Install the package and publish the files to your resources
 ``` bash
-composer require ppwdict/kuleuven_bootstrap
-php artisan vendor:publish --tag=kuleuven_bootstrap
+composer require screenager/kuleuven-laravel-template
+php artisan vendor:publish --provider="kuleuven\laravel-template\KULeuvenBoilerplateServiceProvider"
 ```
 
-### Settings
-..
-
-On production:
+After installation, install the vendors and compile the media files
 ``` bash
-php artisan config:cache
+npm install;
+bower install;
+gulp;
 ```
 
-### Gulp
-After the installation, a gulpfile.js will be placed in your root directory.
-Before running "gulp" to copy compile the resources to the public directory, 
-make sure the vendors specified in this gulpfile are present. 
+### Optional Laravel packages
+The template is optimized to work together with following Laravel vendors.
+All are entirely optional.
 
-We advice to use Bower for fetching these vendors. 
-A .bowerrc is already provided so the vendors will be downloaded in the correct directory
+#### laravel-menu
+[laravel-menu](https://github.com/lavary/laravel-menu).
 
-### Laravel-menu
-The template is optimized to work together with [laravel-menu](https://github.com/lavary/laravel-menu).
+#### laravel-breadcrumbs
+[laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs).
 
-For the menu in the navigation bar, you can rely on the kul2014.js script that injects the code scraped from the ppw.kuleuven.be domain.
-Notice that this will not work when running the application on a different environment, such as your local machine.
+#### stevenmaguire/laravel-middleware-csp
+[stevenmaguire/laravel-middleware-csp](https://github.com/stevenmaguire/laravel-middleware-csp).
 
-## Updates 
-
-``` bash
-composer update ppwdict/kuleuven_bootstrap
-php artisan vendor:publish --tag=kuleuven_bootstrap
-```
-
+#### mcamara/laravel-localization
+[mcamara/laravel-localization](https://github.com/mcamara/laravel-localization).
