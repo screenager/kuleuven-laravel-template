@@ -11,6 +11,9 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.9",
-        "laravel-menu": "dev-master"
+        "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "lavary/laravel-menu": "^1.6",
+        "mcamara/laravel-localization": "^1.1",
+        "stevenmaguire/laravel-middleware-csp": "^0.1.1"
     }
 }

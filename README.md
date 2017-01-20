@@ -1,19 +1,30 @@
-Laravel package providing ready to use template files to mimic the [2016 KU Leuven web layout](https://stijl.kuleuven.be/2016/release/latest/howto_devs.html).
+Laravel package providing ready to use template files to mimic 
+the [2016 KU Leuven web layout](https://stijl.kuleuven.be/2016/release/latest/howto_devs.html).
 
 This package should be considered as a boilerplate. It is intended to be installed and configured just once per project.
 Afterwards, updates will not be reflected automatically to your template files.
 
-# For Laravel 5
+# Features
+* [Gulp](http://gulpjs.com) rules 
 
-## Prerequisites
+  * to fetch the latest version of templates and other resources files from ICTS
+  * download all necessarily resources to your public directory, to make your app independant from the outside world
+* Master layout file that loads the necessary concatenated and compressed resource files
+* [CSP 2](https://en.wikipedia.org/wiki/Content_Security_Policy) support
+* Possiblity to display the following user interface elements, dynamically built and compatible with the Bootstrap 3 and Laravel system:
+  * Displaying a dynamic menu
+  * Breadcrumbs
+  * Language switcher
+
+# Prerequisites
 * A local machine supporting unix commands
-* A freshly installed Laravel 5
-* [Composer](http://getcomposer.org)
-* [Gulp](http://gulpjs.com)
-* [Bower](http://bower.io)
-* [Compass](http://compass-style.org/)
+* A freshly installed Laravel 5.3
+* [Composer](http://getcomposer.org) command installed
+* [Gulp](http://gulpjs.com) command installed
+* [Bower](http://bower.io) command installed
+* [Compass](http://compass-style.org/) command installed
 
-## Install
+# Installation in Laravel 5.3
 
 Install the package and publish the files to your resources
 ``` bash
@@ -54,3 +65,11 @@ All are entirely optional.
 
 #### mcamara/laravel-localization
 [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization).
+
+## Applying updates
+As this package servers as a boilerplate, fetching updates won't have effect on your layout,
+because the only way to alter the resources is to republish these package files which might probably overwrite your customizations for your app.
+
+Running "gulp" again however, will fetch the latest HTML version of the templates from ICTS. 
+This is intended, as the ICTS template files are still in development. 
+Also, this way the university related menu items in the header and footer of the layout are always kept in sync with the rest of the KU Leuven websites.

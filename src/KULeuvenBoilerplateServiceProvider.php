@@ -20,10 +20,19 @@ class KULeuvenBoilerplateServiceProvider extends ServiceProvider
       dirname(__FILE__) .'/gulpfile.js' => base_path('gulpfile.js'),
       dirname(__FILE__) .'/views/layouts' => base_path('resources/views/layouts'),
       dirname(__FILE__) .'/views/welcome.blade.php' => base_path('resources/views/welcome.blade.php'),
-      dirname(__FILE__) .'/assets/style2016' => base_path('resources/assets/style2016'),
-      dirname(__FILE__) .'/assets/app.js' => base_path('resources/assets/app.js'),
-      dirname(__FILE__) .'/assets/usability.js' => base_path('resources/assets/usability.js'),
-      dirname(__FILE__) .'/assets/app.scss' => base_path('resources/assets/app.scss'),
+      dirname(__FILE__) .'/resources/assets/style2016' => base_path('resources/assets/style2016'),
+      dirname(__FILE__) .'/resources/assets/app.js' => base_path('resources/assets/app.js'),
+      dirname(__FILE__) .'/resources/assets/usability.js' => base_path('resources/assets/usability.js'),
+      dirname(__FILE__) .'/resources/assets/app.scss' => base_path('resources/assets/app.scss'),
+
+      dirname(__FILE__) .'/resources/lang/nl/interface.php' => base_path('resources/lang/nl/interface.php'),
+      dirname(__FILE__) .'/resources/lang/en/interface.php' => base_path('resources/lang/en/interface.php'),
+
+      dirname(__FILE__) .'/routes/web.php' => base_path('routes/web.php'),
+      dirname(__FILE__) .'/routes/breadcrumbs.php' => base_path('routes/breadcrumbs.php'),
+      dirname(__FILE__) .'/app/Http/Kernel.php' => base_path('app/Http/Kernel.php'),
+      dirname(__FILE__) .'/app/Http/Middleware/MenuMiddleware.php' => base_path('app/Http/MenuMiddleware.php'),
+      dirname(__FILE__) .'/config/app.php' => base_path('config/app.php'),
     ], 'kuleuven_bootstrap');
 
     // Method Tutorial 2
