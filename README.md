@@ -9,6 +9,7 @@ Soon!
 # For Laravel 5.2
 
 ## Prerequisites
+* A local machine supporting unix commands
 * A freshly installed Laravel 5.2
 * [Composer](http://getcomposer.org)
 * [Gulp](http://gulpjs.com)
@@ -20,7 +21,7 @@ Soon!
 Install the package and publish the files to your resources
 ``` bash
 composer require screenager/kuleuven-laravel-template
-php artisan vendor:publish --provider="kuleuven\laravel-template\KULeuvenBoilerplateServiceProvider"
+php artisan vendor:publish --provider="Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider" --force
 ```
 
 After installation, install the vendors and compile the media files
@@ -29,6 +30,8 @@ npm install;
 bower install;
 gulp;
 ```
+
+If "npm install" doesn't work, try "sudo npm install".
 
 ### Optional Laravel packages
 The template is optimized to work together with following Laravel vendors.
