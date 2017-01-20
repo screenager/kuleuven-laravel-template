@@ -14,7 +14,6 @@ class KULeuvenBoilerplateServiceProvider extends ServiceProvider
   public function boot()
   {
     $this->publishes([
-      dirname(__FILE__) .'/.env' => base_path('.env'),
       dirname(__FILE__) .'/.bowerrc' => base_path('.bowerrc'),
       dirname(__FILE__) .'/package.json' => base_path('package.json'),
       dirname(__FILE__) .'/bower.json' => base_path('bower.json'),

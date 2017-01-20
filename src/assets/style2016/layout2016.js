@@ -28,7 +28,7 @@ $(document).ready(function () {
   }(jQuery));
 
   // Autofocus on first element of object form. @todo move to usability.js, but make it style indendent first
-  var firstFormEl = $(".container form:not(.auto-submit-filters)").find("input:text, form textarea").first();
+  var firstFormEl = $("body > .container form").find("input:text, form textarea").first();
   firstFormEl.focus().val(firstFormEl.val());
 
 });

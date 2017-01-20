@@ -11,7 +11,7 @@
         return $child;
       }, $item->children()->toArray());
       ?>
-      @include('layouts.kul_2016.partials.laravel-menu.main-menu',
+      @include('layouts.partials.laravel-menu.main-menu',
         ['items' => $children]
       )
     </ul>

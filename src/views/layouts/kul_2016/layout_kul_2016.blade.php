@@ -31,10 +31,8 @@
     @include('layouts.kul_2016.fetched_with_gulp.icts.intranet.header_' . App::getLocale())
     <!-- end global header-->
 
-    @include('layouts.partials.header_warnings')
-
     <!-- local header-->
-    @include('layouts.kul_2016.partials.app_local_header')
+    @include('layouts.partials.app_local_header')
     <!-- end local header-->
 
     <!-- main content-->
@@ -50,7 +48,7 @@
 
           @if (Route::currentRouteName() != 'homepage' && isset($MainNav))
             <div class="card-gray menu-2nd-level">
-              @include('layouts.kul_2016.partials.laravel-menu.main-menu-2nd-level', array('items' => $MainNav->roots()))
+              @include('layouts.partials.laravel-menu.main-menu-2nd-level', array('items' => $MainNav->roots()))
             </div>
           @endif
 
@@ -70,7 +68,7 @@
             </h2>
           @endif
 
-          @include('layouts.kul_2016.partials.app_flashmessages')
+          @include('layouts.partials.app_flashmessages')
 
           @if (array_key_exists('content', app('view')->getSections()))
             <div id="content-core">
@@ -82,8 +80,6 @@
         @if ($showSide)
           <div class="col-xs-12 col-md-4">
             @yield('content_right')
-
-            @include('layouts.partials.warnings')
           </div>
         @endif
 

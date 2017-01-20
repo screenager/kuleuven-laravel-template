@@ -4,9 +4,6 @@ This package should be considered as a boilerplate. It is intended to be install
 Afterwards, updates will not be reflected automatically to your template files.
 
 # For Laravel 5.3
-Soon!
-
-# For Laravel 5.2
 
 ## Prerequisites
 * A local machine supporting unix commands
@@ -32,6 +29,15 @@ gulp;
 ```
 
 If "npm install" doesn't work, try "sudo npm install".
+
+Finally, add following lines to .env 
+```
+APP_URL=http://www.myapp.com
+APP_NAME="My app"
+
+GOOGLE_ANALYTICS_ENABLED=false
+GOOGLE_ANALYTICS_TRACKING_ID=
+```
 
 ### Optional Laravel packages
 The template is optimized to work together with following Laravel vendors.
