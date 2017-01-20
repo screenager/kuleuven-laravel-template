@@ -3,11 +3,11 @@ Laravel package providing ready to use template files to mimic the [2016 KU Leuv
 This package should be considered as a boilerplate. It is intended to be installed and configured just once per project.
 Afterwards, updates will not be reflected automatically to your template files.
 
-# For Laravel 5.3
+# For Laravel 5
 
 ## Prerequisites
 * A local machine supporting unix commands
-* A freshly installed Laravel 5.2
+* A freshly installed Laravel 5
 * [Composer](http://getcomposer.org)
 * [Gulp](http://gulpjs.com)
 * [Bower](http://bower.io)
