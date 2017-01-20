@@ -6,11 +6,12 @@ Afterwards, updates will not be reflected automatically to your template files.
 
 # Features
 * [Gulp](http://gulpjs.com) rules 
-
   * to fetch the latest version of templates and other resources files from ICTS
   * download all necessarily resources to your public directory, to make your app independant from the outside world
 * Master layout file that loads the necessary concatenated and compressed resource files
-* [CSP 2](https://en.wikipedia.org/wiki/Content_Security_Policy) support
+* Possiblity to apply [TinyMCE](https://www.tinymce.com) and [Select2](https://select2.github.io/) to form elements. Compatible with Bootstrap 3
+* Some usability and accessibility improvements (print css, [AreYouSure](https://github.com/codedance/jquery.AreYouSure), opening external links in new window, autofocus on first form element)
+* Security features such as [CSP 2](https://en.wikipedia.org/wiki/Content_Security_Policy) support
 * Possiblity to display the following user interface elements, dynamically built and compatible with the Bootstrap 3 and Laravel system:
   * Displaying a dynamic menu
   * Breadcrumbs
@@ -49,6 +50,8 @@ APP_NAME="My app"
 GOOGLE_ANALYTICS_ENABLED=false
 GOOGLE_ANALYTICS_TRACKING_ID=
 ```
+
+You can now go extending the published layout to your needs!
 
 ### Optional Laravel packages
 The template is optimized to work together with following Laravel vendors.
