@@ -169,6 +169,8 @@ return [
         Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Mews\Purifier\PurifierServiceProvider::class,
 
         //
 
@@ -232,6 +234,12 @@ return [
         // Third party aliases
         'Menu' => Lavary\Menu\Facade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'HTML' => Collective\Html\HtmlFacade::class,
+        'Purifier' => Mews\Purifier\Facades\Purifier::class,
+
+        'LayoutHelper'  => App\Helpers\LayoutHelper::class,
+
 
     ],
 

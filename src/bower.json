@@ -8,7 +8,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass": "bootstrap-sass-official#~3.3.6", // might be needed for missing bootstrap parts, such as tabs
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.6",
     "select2": "^4.0.3",
     "select2-bootstrap-theme": "^0.1.0-beta.9",
     "tinymce": "^4.5.0",

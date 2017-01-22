@@ -12,11 +12,11 @@
     
     <nav class="nav-user pull-xs-right">
       <ul>
-        @include('layouts.partials.user_service_menu')
-        @include('layouts.partials.lang_switcher')
+        @include('layouts.kul_2016.partials.user_service_menu')
+        @include('layouts.kul_2016.partials.lang_switcher')
       </ul>
     </nav>
       
-    @include('layouts.partials.app_main_menu')
+    @include('layouts.kul_2016.partials.app_main_menu')
   </div>
 </nav>

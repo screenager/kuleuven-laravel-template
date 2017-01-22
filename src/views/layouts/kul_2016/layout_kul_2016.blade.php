@@ -21,18 +21,18 @@
   <link href="{{ asset('css/style2016/all.css') }}" rel="stylesheet">
 
   @if (getenv('GOOGLE_ANALYTICS_ENABLED') == 'true')
-    @include('layouts.partials.google-analytics')
+    @include('layouts.kul_2016.partials.google-analytics')
   @endif
 </head>
 
 <body>
   <div class="l-page">
     <!-- global header-->
-    @include('layouts.kul_2016.fetched_with_gulp.icts.intranet.header_' . App::getLocale())
+    @include(LayoutHelper::getKULtemplatePathPrefix() . '.header_' . App::getLocale())
     <!-- end global header-->
 
     <!-- local header-->
-    @include('layouts.partials.app_local_header')
+    @include('layouts.kul_2016.partials.app_local_header')
     <!-- end local header-->
 
     <!-- main content-->
@@ -48,7 +48,7 @@
 
           @if (Route::currentRouteName() != 'homepage' && isset($MainNav))
             <div class="card-gray menu-2nd-level">
-              @include('layouts.partials.laravel-menu.main-menu-2nd-level', array('items' => $MainNav->roots()))
+              @include('layouts.kul_2016.partials.laravel-menu.main-menu-2nd-level', array('items' => $MainNav->roots()))
             </div>
           @endif
 
@@ -68,7 +68,7 @@
             </h2>
           @endif
 
-          @include('layouts.partials.app_flashmessages')
+          @include('layouts.kul_2016.partials.app_flashmessages')
 
           @if (array_key_exists('content', app('view')->getSections()))
             <div id="content-core">
@@ -86,14 +86,14 @@
       </div>
 
       <!-- global doormat-->
-      @include('layouts.kul_2016.fetched_with_gulp.icts.intranet.footer_' . App::getLocale())
+      @include(LayoutHelper::getKULtemplatePathPrefix() .  '.footer_' . App::getLocale())
       <!-- end global doormat-->
 
     </div> <!-- end container -->
   </div>
 
   <!-- flyout-->
-  @include('layouts.kul_2016.fetched_with_gulp.icts.intranet.flyout_' . App::getLocale())
+  @include(LayoutHelper::getKULtemplatePathPrefix() . '.flyout_' . App::getLocale())
   <!-- end flyout-->
 
   <script src="{{ asset('js/style2016/vendors.js') }}"></script>

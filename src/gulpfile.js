@@ -39,7 +39,7 @@ elixir(function(mix) {
     '/intranet',
     '/kulak',
     '/hosted-by',
-    '/corp',
+    // '/corp',
     '/landingpage',
   ];
   layoutsDirs.forEach(function(layoutDir) {

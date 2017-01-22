@@ -13,10 +13,10 @@
       @include(config('laravel-menu.views.bootstrap-items'),
 array('items' => $item->children()))
     </ul>
-  @endif
-  </li>
+    @endif
+    </li>
 
-  @if($item->divider)
-    <li{!! Lavary\Menu\Builder::attributes($item->divider) !!}></li>
-  @endif
-@endforeach
+    @if($item->divider)
+      <li{!! Lavary\Menu\Builder::attributes($item->divider) !!}></li>
+    @endif
+    @endforeach

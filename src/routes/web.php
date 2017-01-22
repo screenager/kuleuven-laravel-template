@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::group([
   //'prefix' => LaravelLocalization::setLocale(),
   'middleware' => [
@@ -25,6 +27,26 @@ Route::group([
   Route::get('about', function () {
     return view('about');
   })->name('about');
+
+  Route::get('terms', function () {
+    return view('terms');
+  })->name('terms');
+
+  Route::get('conditions', function () {
+    return view('conditions');
+  })->name('conditions');
+
+  Route::match(['get', 'post'], 'contact', function (Request $request) {
+    $result = null;
+    if ($request->isMethod('post')) {
+      if (class_exists('Purifier')) {
+        $result = clean($request->get('message'), 'contact');
+      }
+    }
+    return view('contact', ['result' => $result]);
+  })->name('contact');
+
+
 
   Route::group(['middleware' => ['auth.basic.once']], function () {
     // place your secured files here

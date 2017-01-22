@@ -33,7 +33,18 @@ composer require screenager/kuleuven-laravel-template;
 php artisan vendor:publish --provider="Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider" --force;
 ```
 
-After installation, install the vendors and compile the media files
+Add the following sevice provider to your app.php :
+```
+Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider::class,
+```
+
+Add following line to the classmap in your root composer.json file
+```
+"app/Helpers"
+```
+..followed by running "composer dump-autoload". Indeed, this package should better ship with a laravel facade, but we're working on it!
+
+Install the vendors and compile the media files
 ``` bash
 npm install;
 bower install;
@@ -42,10 +53,11 @@ gulp;
 
 If "npm install" doesn't work, try "sudo npm install".
 
-Finally, add following lines to .env and fill in the values
+Finally, add following lines to .env and fill in the correct values
 ```
 APP_URL=http://www.myapp.com
 APP_NAME="My app"
+SUB_LAYOUT=default # options : default, intranet, hosted-by, kulak, landingpage
 
 GOOGLE_ANALYTICS_ENABLED=false
 GOOGLE_ANALYTICS_TRACKING_ID=
@@ -58,22 +70,32 @@ The template is optimized to work together with following Laravel vendors.
 All are entirely optional.
 
 #### laravel-menu
-[laravel-menu](https://github.com/lavary/laravel-menu).
+[laravel-menu](https://github.com/lavary/laravel-menu) is a powerful package to build and display a menu structure.
 
 #### laravel-breadcrumbs
-[laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs).
+[laravel-breadcrumbs](https://github.com/davejamesmiller/laravel-breadcrumbs) is not maintained any longer, but can still be used as a tool to dynamically build a breadcrumb structure.
+
+To support the KU Leuven layout, after  installation, change the 'view' parameter of the config/breadcrumbs.php file to
+
+```
+'view' => 'layouts.kul_2016.partials.breadcrumbs.bootstrap4',
+```
 
 #### stevenmaguire/laravel-middleware-csp
-[stevenmaguire/laravel-middleware-csp](https://github.com/stevenmaguire/laravel-middleware-csp).
+[stevenmaguire/laravel-middleware-csp](https://github.com/stevenmaguire/laravel-middleware-csp) allows you to serve a policy file (CSP) to browsers telling them which frontend resources are safe to be loaded on your webpage.
 
 #### mcamara/laravel-localization
-[mcamara/laravel-localization](https://github.com/mcamara/laravel-localization).
+[mcamara/laravel-localization](https://github.com/mcamara/laravel-localization) is a powerful extension for the supporting multiple languages in Laravel.
+
+#### laravelcollective/html
+[Laravel Collective](https://github.com/laravelcollective/html) provides an easier way to build forms.
+
 
 ## Applying updates
 As this package server as a boilerplate, fetching updates won't have effect to your layout,
 because the only way to alter the resources is to republish these package files which might probably overwrite your customizations you made for your app.
 
-Running "gulp" again however, will fetch the latest HTML version of the templates from ICTS. 
+Running "gulp" again however, will fetch the latest HTML and CSS of the templates from ICTS. 
 This is intended, as the ICTS template files are still in development. 
 Also, this way the university related menu items in the header and footer of the layout are brought to their latest version in accordance with the other KU Leuven websites.
 

@@ -1,13 +1,13 @@
 @extends('layouts.kul_2016.layout_kul_2016')
 
 @section('page-title')
-  {{ trans('interface.about') }}
+  Conditions
 @endsection
 
 @section('content')
   <div class="row">
     <div class="col-md-12">
-      About..
+      Conditions..
     </div>
   </div>
 @endsection

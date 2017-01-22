@@ -21,9 +21,22 @@ class MenuMiddleware
       $menu->add(trans('interface.home'), [
         'url' => route('homepage'),
       ]);
-      $menu->add(trans('interface.about'), [
+      $menuAbout = $menu->add(trans('interface.about'), [
         'url' => route('about'),
       ]);
+
+      $menuAbout->add('Terms', [
+        'url' => route('terms'),
+      ]);
+
+      $menuAbout->add('Conditions', [
+        'url' => route('conditions'),
+      ]);
+
+      $menu->add('Contact', [
+        'url' => route('contact'),
+      ]);
+
       if (!Auth::check() && Route::has('login')) {
         $menu->add(trans('auth.login'), [
           'url' => route('login'),
