@@ -95,7 +95,7 @@ To support the KU Leuven layout, after  installation, change the 'view' paramete
 
 
 ## Applying updates
-As this package server as a boilerplate, fetching updates won't have effect to your layout,
+As this package serves as a boilerplate, fetching updates won't have effect to your layout,
 because the only way to alter the resources is to republish these package files which might probably overwrite your customizations you made for your app.
 
 Running "gulp" again however, will fetch the latest HTML and CSS of the templates from ICTS. 
