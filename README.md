@@ -33,16 +33,16 @@ composer require screenager/kuleuven-laravel-template;
 php artisan vendor:publish --provider="Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider" --force;
 ```
 
-Add the following sevice provider to your app.php :
-```
-Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider::class,
-```
-
 Add following line to the classmap in your root composer.json file
 ```
 "app/Helpers"
 ```
 ..followed by running "composer dump-autoload". Indeed, this package should better ship with a laravel facade, but we're working on it!
+
+Add the following sevice provider to your app.php :
+```
+Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider::class,
+```
 
 Install the vendors and compile the media files
 ``` bash
@@ -89,6 +89,9 @@ To support the KU Leuven layout, after  installation, change the 'view' paramete
 
 #### laravelcollective/html
 [Laravel Collective](https://github.com/laravelcollective/html) provides an easier way to build forms.
+
+#### mews/purifier
+[Purifier](https://github.com/mewebstudio/Purifier) comes with a method "clean" to selectively filter HTML from a string.
 
 
 ## Applying updates

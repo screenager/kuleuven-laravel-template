@@ -17,7 +17,7 @@
         "mcamara/laravel-localization": "^1.1",
         "stevenmaguire/laravel-middleware-csp": "^0.1.1",
         "laravelcollective/html": "^5.3",
-        "mews/purifier": "^2.0",
+        "mews/purifier": "^2.0"
         
     }
 }

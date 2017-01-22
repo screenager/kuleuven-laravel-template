@@ -34,9 +34,11 @@ class KULeuvenBoilerplateServiceProvider extends ServiceProvider
 
       dirname(__FILE__) .'/routes/web.php' => base_path('routes/web.php'),
       dirname(__FILE__) .'/routes/breadcrumbs.php' => base_path('routes/breadcrumbs.php'),
+      dirname(__FILE__) .'/app/Helpers/LayoutHelper.php' => app_path('Helpers/LayoutHelper.php'),
       dirname(__FILE__) .'/app/Http/Kernel.php' => app_path('Http/Kernel.php'),
       dirname(__FILE__) .'/app/Http/Middleware/MenuMiddleware.php' => app_path('Http/Middleware/MenuMiddleware.php'),
       dirname(__FILE__) .'/config/app.php' => config_path('app.php'),
+      dirname(__FILE__) .'/config/breadcrumbs.php' => config_path('breadcrumbs.php'),
     ]);
   }
 }
