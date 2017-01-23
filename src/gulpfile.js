@@ -3,6 +3,7 @@ const elixir = require('laravel-elixir');
 const download = require("gulp-download");
 const rename = require("gulp-rename");
 const gulp = require('gulp');
+const symlink = require('gulp-symlink');
 
 
 /*
@@ -43,6 +44,7 @@ elixir(function(mix) {
     '/landingpage',
   ];
   layoutsDirs.forEach(function(layoutDir) {
+    // copy the templates and convert to Blade template files
     download([
       latestKulStijlUrl + '/includes' + layoutDir + '/header.nl.inc',
       latestKulStijlUrl + '/includes' + layoutDir + '/header.en.inc',
@@ -59,6 +61,16 @@ elixir(function(mix) {
       }))
       .pipe(gulp.dest(fetchedTemplatesDir + "/icts" + layoutDir));
   });
+  // copy the images
+  download([
+    latestKulStijlUrl + '/img/favicon.png',
+    latestKulStijlUrl + '/img/sedes-kuleuven.png',
+  ])
+    .pipe(gulp.dest("./public/img"));
+
+  // The CSS of KUL sometimes looks into /css/img instead of /img, so make a symlink
+  gulp.src('./public/img')
+    .pipe(symlink('./public/css/img'))
 
   mix.scripts([
     kulAssets2016Dir + 'layout2016.js',

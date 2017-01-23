@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 Route::group([
   //'prefix' => LaravelLocalization::setLocale(),
   'middleware' => [
-    //'secure.content',
+    'secure.content',
     //'localeSessionRedirect', 'localizationRedirect',
   ]
 ], function () {

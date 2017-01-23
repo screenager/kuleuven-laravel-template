@@ -5,7 +5,7 @@ This package should be considered as a boilerplate. It is intended to be install
 Afterwards, updates will not be reflected automatically to your template files.
 
 # Features
-* [Gulp](http://gulpjs.com) rules 
+* [Gulp](http://gulpjs.com) rules (Gulp 3) 
   * to fetch the latest version of templates and other resources files from ICTS
   * download all necessarily resources to your public directory, to make your app independant from the outside world
 * Master layout file that loads the necessary concatenated and compressed resource files
