@@ -48,7 +48,7 @@
         <div id="contentwrapper" class="col-xs-12 {{ $showSide ? 'col-md-8' : 'col-md-12' }}">
 
           @if (Route::currentRouteName() != 'homepage' && isset($MainNav))
-            <div class="card-gray menu-2nd-level">
+            <div class="menu-2nd-level">
               @include('layouts.kul_2016.partials.laravel-menu.main-menu-2nd-level', array('items' => $MainNav->roots()))
             </div>
           @endif

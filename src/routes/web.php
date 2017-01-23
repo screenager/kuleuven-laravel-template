@@ -13,13 +13,15 @@
 
 use Illuminate\Http\Request;
 
-Route::group([
-  //'prefix' => LaravelLocalization::setLocale(),
-  'middleware' => [
-    'secure.content',
-    //'localeSessionRedirect', 'localizationRedirect',
-  ]
-], function () {
+$routeAttr = [];
+if (class_exists('LaravelLocalization') && count(config('laravellocalization.supportedLocales')) > 1) {
+  $routeAttr['prefix'] = LaravelLocalization::setLocale();
+  $routeAttr['middleware'][] = 'localeSessionRedirect';
+  $routeAttr['middleware'][] = 'localizationRedirect';
+}
+$routeAttr['middleware'][] = 'secure.content'; // CSP
+
+Route::group($routeAttr, function () {
   Route::get('/', function () {
     return view('welcome');
   })->name('homepage');

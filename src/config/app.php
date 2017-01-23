@@ -171,8 +171,7 @@ return [
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Mews\Purifier\PurifierServiceProvider::class,
-
-        //
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -237,6 +236,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
         'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+
 
         'LayoutHelper'  => App\Helpers\LayoutHelper::class,
 
