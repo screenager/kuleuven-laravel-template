@@ -65,6 +65,9 @@ ol.breadcrumb {
 
 .local-header .nav-tabs {
   padding-left: 0;
+  li.active a {
+    background-image: none;
+  }
 }
 
 /** Missing Bootstrap 3 styles, previously present in Bootstrap 2 */

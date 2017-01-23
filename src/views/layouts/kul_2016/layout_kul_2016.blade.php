@@ -44,7 +44,7 @@
     <div class="container">
       <?php $showSide = (!isset($hideSide) || $hideSide == false); ?>
 
-      <div class="row m-t-2"><!-- m-t-2 provides a margin-top -->
+      <div class="row"><!-- m-t-2 provides a margin-top -->
         <div id="contentwrapper" class="col-xs-12 {{ $showSide ? 'col-md-8' : 'col-md-12' }}">
 
           @if (Route::currentRouteName() != 'homepage' && isset($MainNav))

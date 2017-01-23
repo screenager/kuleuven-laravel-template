@@ -1,5 +1,5 @@
-<nav class="navbar nav-tabs nav-more" id="local-header">
-  <ul class="nav navbar-nav">
+<nav class="navbar nav-tabs nav-more collapse" id="local-header">
+  <ul>
     @if (isset($MainNav))
       @include('layouts.kul_2016.partials.laravel-menu.main-menu', array('items' => $MainNav->roots()))
     @endif
