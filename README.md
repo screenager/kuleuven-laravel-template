@@ -30,22 +30,22 @@ Afterwards, updates will not be reflected automatically to your template files.
 Install the package and publish the files to your resources
 ``` bash
 composer require kuleuven/laravel-template;
-php artisan vendor:publish --provider="Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider" --force;
 ```
-
-Add following line to the classmap in your root composer.json file
-```
-"app/Helpers"
-```
-..followed by running "composer dump-autoload". Indeed, this package should better ship with a laravel facade, but we're working on it!
 
 Add the following sevice provider to your app.php :
 ```
 Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider::class,
 ```
 
-Install the vendors and compile the media files
+Add following line to the classmap in your root composer.json file
+```
+"app/Helpers"
+```
+Then run
+
 ``` bash
+php artisan vendor:publish --provider="Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider" --force;
+composer dump-autoload;
 npm install;
 bower install;
 gulp;
