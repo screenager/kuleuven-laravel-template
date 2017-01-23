@@ -24,7 +24,7 @@ return [
         ],
         'script-src' => [
           'https://www.google-analytics.com',
-          // "'self'",
+          "'self'", // needed for tinymce, see https://github.com/tinymce/tinymce/issues/1901
           "'unsafe-eval'", // needed for bootstrap 4 de-collapse
           env('APP_DEBUG_BAR') == 'false' ? "'unsafe-inline'" : "'nonce-" . App\Helpers\LayoutHelper::getCSPhash() . "'",
           'about:', # for the 'about:blank' by google analytics

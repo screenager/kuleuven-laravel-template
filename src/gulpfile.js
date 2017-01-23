@@ -41,7 +41,7 @@ elixir(function(mix) {
     '/kulak',
     '/hosted-by',
     // '/corp',
-    '/landingpage',
+    '/landingpage'
   ];
   layoutsDirs.forEach(function(layoutDir) {
     // copy the templates and convert to Blade template files
@@ -51,12 +51,12 @@ elixir(function(mix) {
       latestKulStijlUrl + '/includes' + layoutDir + '/footer.nl.inc',
       latestKulStijlUrl + '/includes' + layoutDir + '/footer.en.inc',
       latestKulStijlUrl + '/includes' + layoutDir + '/flyout.nl.inc',
-      latestKulStijlUrl + '/includes' + layoutDir + '/flyout.en.inc',
+      latestKulStijlUrl + '/includes' + layoutDir + '/flyout.en.inc'
     ])
     // convert the name of the .inc files to Laravel Blade files
       .pipe(rename(function (path) {
-        path.basename = path.basename.replace('.inc', '')
-        path.basename = path.basename.replace('.', '_')
+        path.basename = path.basename.replace('.inc', '');
+        path.basename = path.basename.replace('.', '_');
         path.extname = ".blade.php"
       }))
       .pipe(gulp.dest(fetchedTemplatesDir + "/icts" + layoutDir));
@@ -64,25 +64,25 @@ elixir(function(mix) {
   // copy the images
   download([
     latestKulStijlUrl + '/img/favicon.png',
-    latestKulStijlUrl + '/img/sedes-kuleuven.png',
+    latestKulStijlUrl + '/img/sedes-kuleuven.png'
   ])
     .pipe(gulp.dest("./public/img"));
 
   // The CSS of KUL sometimes looks into /css/img instead of /img, so make a symlink
   gulp.src('./public/img')
-    .pipe(symlink('./public/css/img'))
+    .pipe(symlink('./public/css/img', {force: true}));
 
   mix.scripts([
     kulAssets2016Dir + 'layout2016.js',
     './resources/assets/app.js',
-    './resources/assets/usability.js',
-  ], 'public/js/style2016/app.js')
+    './resources/assets/usability.js'
+  ], 'public/js/style2016/app.js');
 
-  mix.sass(kulAssets2016Dir + 'layout2016.scss', 'public/css/style2016/app.css')
+  mix.sass(kulAssets2016Dir + 'layout2016.scss', 'public/css/style2016/app.css');
 
   mix.styles([
     vendorDir + '/select2/dist/css/select2.min.css',
-    vendorDir + '/select2-bootstrap-theme/dist/select2-bootstrap.css',
+    vendorDir + '/select2-bootstrap-theme/dist/select2-bootstrap.css'
     // .. place more vendor css dependencies here
   ], 'public/css/style2016/all.css');
 
@@ -92,12 +92,12 @@ elixir(function(mix) {
     'bootstrap-sass/assets/javascripts/bootstrap.min.js',
     'bootstrap/js/tab.js',
     'select2/dist/js/select2.min.js',
-    'jquery.are-you-sure/jquery.are-you-sure.js',
+    'jquery.are-you-sure/jquery.are-you-sure.js'
     // .. place more vendor scripts dependencies here
-  ], 'public/js/style2016/vendors.js', vendorDir)
+  ], 'public/js/style2016/vendors.js', vendorDir);
 
-  mix.copy(vendorDir + 'tinymce/themes/modern', 'public/tinymce/themes/modern')
-  mix.copy(vendorDir + 'tinymce/skins/lightgray', 'public/tinymce/skins/lightgray')
-  mix.copy(vendorDir + 'tinymce/plugins', 'public/tinymce/plugins')
+  mix.copy(vendorDir + 'tinymce/themes/modern', 'public/tinymce/themes/modern');
+  mix.copy(vendorDir + 'tinymce/skins/lightgray', 'public/tinymce/skins/lightgray');
+  mix.copy(vendorDir + 'tinymce/plugins', 'public/tinymce/plugins');
 
 });

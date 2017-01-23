@@ -29,7 +29,7 @@ Afterwards, updates will not be reflected automatically to your template files.
 
 Install the package and publish the files to your resources
 ``` bash
-composer require screenager/kuleuven-laravel-template;
+composer require kuleuven/laravel-template;
 php artisan vendor:publish --provider="Screenager\KULeuvenBoilerplate\KULeuvenBoilerplateServiceProvider" --force;
 ```
 
