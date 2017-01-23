@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
   <base href="{{ getenv('APP_URL') }}" />
 
   <title>
@@ -96,7 +97,7 @@
   @include(LayoutHelper::getKULtemplatePathPrefix() . '.flyout_' . App::getLocale())
   <!-- end flyout-->
 
-  <script src="{{ asset('js/style2016/vendors.js') }}"></script>
-  <script src="{{ asset('js/style2016/app.js') }}"></script>
+  <script src="{{ asset('js/style2016/vendors.js') }}" nonce="{{ LayoutHelper::getCSPhash() }}"></script>
+  <script src="{{ asset('js/style2016/app.js') }}" nonce="{{ LayoutHelper::getCSPhash() }}"></script>
 </body>
 </html>
