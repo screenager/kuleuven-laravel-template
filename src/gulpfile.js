@@ -1,10 +1,10 @@
 process.env.DISABLE_NOTIFIER = true;
-const elixir = require('laravel-elixir');
-const download = require("gulp-download");
-const rename = require("gulp-rename");
 const gulp = require('gulp');
+const download = require("gulp-download");
+const elixir = require('laravel-elixir');
+const rename = require("gulp-rename");
+const replace = require('gulp-replace');
 const symlink = require('gulp-symlink');
-
 
 /*
  |--------------------------------------------------------------------------
@@ -53,6 +53,8 @@ elixir(function(mix) {
       latestKulStijlUrl + '/includes' + layoutDir + '/flyout.nl.inc',
       latestKulStijlUrl + '/includes' + layoutDir + '/flyout.en.inc'
     ])
+	// correct some HTML content
+    .pipe(replace('https://stijl.kuleuven.be/2016/', ''))
     // convert the name of the .inc files to Laravel Blade files
       .pipe(rename(function (path) {
         path.basename = path.basename.replace('.inc', '');
@@ -65,8 +67,10 @@ elixir(function(mix) {
   download([
     latestKulStijlUrl + '/img/favicon.png',
     latestKulStijlUrl + '/img/sedes-kuleuven.png'
-  ])
-    .pipe(gulp.dest("./public/img"));
+  ]).pipe(gulp.dest("./public/img"));
+  download([
+    latestKulStijlUrl + '/img/logo.svg'
+  ]).pipe(gulp.dest("./img/svg"));
 
   // The CSS of KUL sometimes looks into /css/img instead of /img, so make a symlink
   gulp.src('./public/img')

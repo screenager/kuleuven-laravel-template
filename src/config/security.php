@@ -20,7 +20,6 @@ return [
           'data:',
           'https://www.google-analytics.com',
           //'http://www.google-analytics.com',
-          'https://stijl.kuleuven.be/2016/img/svg/logo.svg', // needed by kul style 2016
         ],
         'script-src' => [
           'https://www.google-analytics.com',
