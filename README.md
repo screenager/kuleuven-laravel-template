@@ -109,6 +109,11 @@ You might want to split the gulp command into a command to update your CSS/JS, a
 * This is not useful if you just want to make pages through the CMS of the university.
 * A more simplified boilerplate version, independant from  for the Laravel, can found on [screenager/kuleuven-boilerplate](https://github.com/screenager/kuleuven-boilerplate).
 
+# Stay up-to-date
+* https://admin.kuleuven.be/icts/services/wms/intranet/webdevnieuws
+* https://www.kuleuven.be/stijlgids
+* https://stijl.kuleuven.be/2016/techspecs
+
 # Todos
 This boilerplate was made to support an info session at the university.
 It still needs some cleanup, such as a cleaner gulpfile.js and the use of Laravel facades.
