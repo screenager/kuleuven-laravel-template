@@ -31,9 +31,13 @@ elixir(function(mix) {
   download(latestKulStijlUrl + '/js/all.min.js')
     .pipe(gulp.dest(vendorDir + 'kul_latest/js'));
 
-  download('https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans:400italic,600italic,700italic,400,700,600|Merriweather:400italic,400,700')
-    .pipe(rename('google-for-kul'))
-    .pipe(gulp.dest(vendorDir + 'kul_latest/fonts'));
+  /*
+   // Fetch the CSS for the Google fonts
+   // @fixme : disabled, as the URI looks at your user agent, and thereby does not return definitions suitable for all browsers
+   download('https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans:400italic,600italic,700italic,400,700,600|Merriweather:400italic,400,700')
+   .pipe(rename('google-for-kul'))
+   .pipe(gulp.dest(vendorDir + 'kul_latest/fonts'));
+   */
 
   var layoutsDirs = [
     '', // default one
