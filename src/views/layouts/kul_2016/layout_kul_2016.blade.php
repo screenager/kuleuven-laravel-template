@@ -73,6 +73,13 @@
 
           @if (array_key_exists('content', app('view')->getSections()))
             <div id="content-core">
+
+              @if (empty(env('APP_NAME')) || empty(env('APP_URL')))
+                <div class="alert alert-danger">
+                  Don't forget to configure .env file (APP_NAME, APP_URL)
+                </div>
+              @endif
+
               @yield('content')
             </div>
           @endif
