@@ -18,8 +18,8 @@
     @section('title') {{ env('APP_NAME') }} @show
   </title>
 
-  <link href="{{ asset('css/style2016/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/style2016/all.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/style2016/app.css') }}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Open+Sans:400italic,600italic,700italic,400,700,600|Merriweather:400italic,400,700" type="text/css">
 
   @if (getenv('GOOGLE_ANALYTICS_ENABLED') == 'true')
     @include('layouts.kul_2016.partials.google-analytics')

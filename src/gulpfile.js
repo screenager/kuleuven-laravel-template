@@ -53,9 +53,9 @@ elixir(function(mix) {
       latestKulStijlUrl + '/includes' + layoutDir + '/flyout.nl.inc',
       latestKulStijlUrl + '/includes' + layoutDir + '/flyout.en.inc'
     ])
-	// correct some HTML content
-    .pipe(replace('https://stijl.kuleuven.be/2016/', ''))
-    // convert the name of the .inc files to Laravel Blade files
+    // correct some HTML content
+      .pipe(replace('https://stijl.kuleuven.be/2016/', ''))
+      // convert the name of the .inc files to Laravel Blade files
       .pipe(rename(function (path) {
         path.basename = path.basename.replace('.inc', '');
         path.basename = path.basename.replace('.', '_');
@@ -70,7 +70,7 @@ elixir(function(mix) {
   ]).pipe(gulp.dest("./public/img"));
   download([
     latestKulStijlUrl + '/img/logo.svg'
-  ]).pipe(gulp.dest("./img/svg"));
+  ]).pipe(gulp.dest("./public/img/svg"));
 
   // The CSS of KUL sometimes looks into /css/img instead of /img, so make a symlink
   gulp.src('./public/img')
@@ -85,10 +85,11 @@ elixir(function(mix) {
   mix.sass(kulAssets2016Dir + 'layout2016.scss', 'public/css/style2016/app.css');
 
   mix.styles([
+    './public/css/style2016/app.css',
     vendorDir + '/select2/dist/css/select2.min.css',
     vendorDir + '/select2-bootstrap-theme/dist/select2-bootstrap.css'
     // .. place more vendor css dependencies here
-  ], 'public/css/style2016/all.css');
+  ], 'public/css/style2016/app.css');
 
   mix.scripts([
     'kul_latest/js/all.min.js',
