@@ -33,6 +33,7 @@ return [
         'style-src' => [
           "'self'",
           "'unsafe-inline'",
+          'https://fonts.googleapis.com',
         ],
       ],
     ],
