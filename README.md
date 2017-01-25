@@ -28,6 +28,13 @@ Afterwards, updates will not be reflected automatically to your template files.
 
 # Installation in Laravel 5.3
 
+First install a fresh Laravel
+``` bash
+composer create-project laravel/laravel myapp 5.3;
+; or: "laravel new --5.3", but as on day of writing, option for 5.3 is not yet supported
+```
+And don't forget to let the www root point to the myapp/public/ directory.
+
 Install the package and publish the files to your resources
 ``` bash
 composer require kuleuven/laravel-template;
